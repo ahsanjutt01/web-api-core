@@ -1,10 +1,12 @@
 ﻿using demo_api.models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace demo_api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -51,11 +53,11 @@ namespace demo_api.Controllers
             }
         }
 
-        [HttpPost("login")]
+       /* [HttpPost("login")]
         public User Login([FromBody] LoginModel user)
         {
             return UserRepo.Login(user);
-        }
+        }*/
 
     }
 }
